@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/FavIcon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+    />
+
+    <title>Baymount</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"></script>
+  </head>
+  <body>
+    <header class="w-full flex flex-col items-center justify-center" id="home">
+      <nav class="navbar w-full">
+        <div
+          class="container flex justify-between items-center max-w-[1300px] mx-auto px-5 md:px-10"
+        >
+          <a href="#home"
+            ><img src="./assets/Logo.png" class="logo" alt="Logo"
+          /></a>
+
+          <button id="hamburger" class="hamburger">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+          </button>
+        </div>
+
+        <div id="overlay" class="overlay">
+          <div class="overlay-content">
+            <a href="#home">HOME</a>
+            <a href="#projects">PROJECTS</a>
+            <a href="#location">LOCATION</a>
+            <a href="#floor-plan">FLOOR PLANS</a>
+            <a href="#gallery">GALLERY</a>
+            <a href="#contact-us">CONTACT US</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section
+        class="banner bg-no-repeat bg-cover bg-center bg-fixed bg-[url('./assets/Banner.jpg')] w-[100%] flex flex-col items-center justify-center"
+      >
+        <div
+          class="overflow-hidden banner-content flex flex-col items-center justify-center w-full max-w-[1300px] px-[20px] md:px-[40px] gap-[20px]"
+        >
+          <h1 class="text-[40px] text-white text-center banner-title">
+            Leave The World <br class="md:hidden inline" />At Bay
+          </h1>
+          <a href="#contact-us" class="banner-btn">
+            <button
+              class="group relative inline-flex items-center justify-center rounded overflow-hidden bg-[#FFFFFF] py-1 px-3 font-medium text-neutral-200 transition hover:scale-110"
+            >
+              <span class="gradient-text">Enquire Now</span>
+
+              <div
+                class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]"
+              >
+                <div class="relative h-full w-8 bg-white/20"></div>
+              </div>
+            </button>
+          </a>
+        </div>
+      </section>
+
+      <section class="w-full flex items-center justify-center" id="Living">
+        <div
+          class="w-full max-w-[1300px] px-[20px] md:px-[40px] py-[50px] flex flex-col md:flex-row justify-between items-start gap-[50px] md:gap-[0px] overflow-hidden"
+        >
+          <div class="w-full md:w-[50%] iconic-living slide-left">
+            <h2 class="text-[32px] text-white mb-[10px]">Iconic Living</h2>
+            <p class="text-white text-[16px] font-thin">
+              Set along the lakefront, this community brings nature,
+              architecture, and exclusivity into one rare setting.
+            </p>
+            <div
+              class="flex w-full justify-between py-3 border-b text-white mb-[10px] mt-[10px]"
+            >
+              <p class="font-thin">62 Acres</p>
+              <p class="font-thin">Total Project Size</p>
+            </div>
+            <div
+              class="flex w-full justify-between py-3 border-b text-white mb-[10px]"
+            >
+              <p class="font-thin">400</p>
+              <p class="font-thin">Total Villas</p>
+            </div>
+            <div
+              class="flex w-full justify-between py-3 border-b text-white mb-[10px]"
+            >
+              <p class="font-thin">360-402 Sq Yards</p>
+              <p class="font-thin">Villa Plot Size</p>
+            </div>
+            <div class="flex w-full justify-between py-3 border-b text-white">
+              <p class="font-thin">4500-5500 Sq. ft</p>
+              <p class="font-thin">Villa Built Up Area</p>
+            </div>
+          </div>
+          <div
+            class="w-full md:w-[50%] flex items-center justify-center md:items-end md:justify-end slide-right"
+          >
+            <img
+              src="./assets/Iconic_Living.jpg"
+              alt="Iconic-Lving"
+              class="h-[372px] md:w-[80%]"
+            />
+          </div>
+        </div>
+      </section>
+      <div class="flex items-center justify-center">
+        <div class="max-w-[1300px] pb-[50px] px-[20px] md:px-[40px] w-full">
+          <div class="border-b w-full h-[1px]"></div>
+        </div>
+      </div>
+      <section
+        class="w-full flex items-center justify-center h-full"
+        id="projects"
+      >
+        <div
+          class="max-w-[1300px] px-[20px] md:px-[40px] pb-[50px] w-full h-full overflow-x-hidden"
+        >
+          <h2 class="text-[32px] text-white mb-[50px]">Project Highlights</h2>
+          <!-- FIRST 6 CARDS -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-[50px]">
+            <!-- 1 -->
+            <div class="flex flex-col slide-up">
+              <img
+                src="./assets/project_highlights/Timeless_Heritage.jpg"
+                class="mb-[15px]"
+              />
+              <h3 class="text-[18px] text-white mb-[5px]">Timeless Heritage</h3>
+              <p class="text-white font-thin">
+                The community features an enshrined temple, and around it,
+                50-year-old tamarind and banyan trees, giving the place its
+                grounding.
+              </p>
+            </div>
+
+            <!-- 2 -->
+            <div class="flex flex-col slide-up">
+              <img
+                src="./assets/project_highlights/Scenic_Vistas.jpg"
+                class="mb-[15px]"
+              />
+              <h3 class="text-[18px] text-white mb-[5px]">Scenic Vistas</h3>
+              <p class="text-white font-thin">
+                The topography moves in free-form, rising and dipping with its
+                natural contours.
+              </p>
+            </div>
+
+            <!-- 3 -->
+            <div class="flex flex-col slide-up">
+              <img
+                src="./assets/project_highlights/Enduring_Build.jpg"
+                class="mb-[15px]"
+              />
+              <h3 class="text-[18px] text-white mb-[5px]">Enduring Build</h3>
+              <p class="text-white font-thin">
+                Each villa starts with a strong concrete foundation and
+                continues with fittings chosen for lasting reliability.
+              </p>
+            </div>
+
+            <!-- 4 -->
+            <div class="flex flex-col slide-up">
+              <img
+                src="./assets/project_highlights/Green_Streets.jpg"
+                class="mb-[15px]"
+              />
+              <h3 class="text-[18px] text-white mb-[5px]">Green Streets</h3>
+              <p class="text-white font-thin">
+                Every street is edged with pocket gardens that soften the built
+                environment and bring nature into daily life.
+              </p>
+            </div>
+
+            <!-- 5 -->
+            <div class="flex flex-col slide-up">
+              <img
+                src="./assets/project_highlights/Central_Meadow.jpg"
+                class="mb-[15px]"
+              />
+              <h3 class="text-[18px] text-white mb-[5px]">Central Meadow</h3>
+              <p class="text-white font-thin">
+                Set beside an expansive central park, the villas enjoy a natural
+                extension of open space right at their doorstep.
+              </p>
+            </div>
+
+            <!-- 6 -->
+            <div class="flex flex-col slide-up">
+              <img
+                src="./assets/project_highlights/Seamless_Carparking.jpg"
+                class="mb-[15px]"
+              />
+              <h3 class="text-[18px] text-white mb-[5px]">
+                Seamless Carparking
+              </h3>
+              <p class="text-white font-thin">
+                The layout ensures ample parking that keeps vehicles out of
+                sight and the streetscape free of visual clutter.
+              </p>
+            </div>
+          </div>
+          <!-- END OF FIRST 6 CARDS -->
+          <!-- LAST 2 CARDS (centered) -->
+          <div class="flex flex-wrap justify-center gap-[50px] pt-[50px]">
+            <!-- Card 7 -->
+            <div class="w-full sm:w-[30%] flex flex-col slide-up">
+              <img
+                src="./assets/project_highlights/Clubhouse_Spread.jpg"
+                class="mb-[15px] w-full object-cover"
+              />
+              <h3 class="text-[18px] text-white mb-[5px]">Clubhouse Spread</h3>
+              <p class="text-white font-thin flex-1">
+                A landmark 75,000 sq. ft. clubhouse stands as the community’s
+                social and recreational anchor.
+              </p>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="w-full sm:w-[30%] flex flex-col slide-up">
+              <img
+                src="./assets/project_highlights/Lakeside_Retreat.jpg"
+                class="mb-[15px] w-full object-cover"
+              />
+              <h3 class="text-[18px] text-white mb-[5px]">Lakeside Retreat</h3>
+              <p class="text-white font-thin flex-1">
+                Placed at the end of a quiet cul-de-sac, the villas sit in a
+                naturally secluded setting.
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex items-center justify-center w-full pt-[30px] slide-up"
+          >
+            <a href="#contact-us">
+              <button
+                class="group relative inline-flex items-center justify-center rounded-md overflow-hidden bg-white py-1 px-3 font-medium transition-all duration-300 [transition-timing-function:cubic-bezier(0.175,0.885,0.32,1.275)] active:-translate-y-1 active:scale-x-90 active:scale-y-110"
+              >
+                <span
+                  class="bg-gradient-to-r from-[#7B5B54] to-[#667379] bg-clip-text text-transparent"
+                >
+                  Enquire Now
+                </span>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+      <div class="flex items-center justify-center">
+        <div class="max-w-[1300px] pb-[50px] px-[20px] md:px-[40px] w-full">
+          <div class="border-b w-full h-[1px]"></div>
+        </div>
+      </div>
+      <section class="w-full flex items-center justify-center" id="location">
+        <div class="px-[20px] md:px-[40px] w-full max-w-[1300px]">
+          <h3 class="text-[32px] text-white pb-[30px]">Location Map</h3>
+          <div class="h-[60vh] sm:h-[80vh] w-full">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.7538470061235!2d78.47488331502738!3d17.38504498814547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9734e6a7d2b3%3A0xc6c27621e1c0e6e3!2sHyderabad%2C%20Telangana%2C%20India!5e0!3m2!1sen!2sin!4v1701479482753!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div
+            class="flex items-center justify-center w-full pt-[30px] slide-up"
+          >
+            <a href="#contact-us" class="banner-btn">
+              <button
+                class="inline-flex items-center justify-center rounded-md bg-white px-3 py-1 font-medium shadow-lg shadow-neutral-500/20 transition active:scale-95"
+              >
+                <span
+                  class="bg-gradient-to-r from-[#7B5B54] to-[#667379] bg-clip-text text-transparent"
+                >
+                  Enquire Now
+                </span>
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+      <div class="flex items-center justify-center">
+        <div class="max-w-[1300px] py-[50px] px-[20px] md:px-[40px] w-full">
+          <div class="border-b w-full h-[1px]"></div>
+        </div>
+      </div>
+      <section
+        class="w-full flex flex-col items-center justify-center"
+        id="floor-plan"
+      >
+        <div
+          class="max-w-[1300px] px-[20px] md:px-[40px] w-full overflow-hidden"
+        >
+          <h3 class="text-[32px] text-white pb-[30px]">Floor Plans</h3>
+          <div
+            class="w-full h-full flex flex-col md:flex-row md:items-center md:justify-between gap-y-[50px] md:gap-y-0 md:gap-x-[50px]"
+          >
+            <!-- Left images -->
+            <div class="flex flex-col w-full md:w-[60%] gap-y-[50px]">
+              <img
+                src="./assets/floor_plans/floor_plan_1.jpg"
+                alt="Floor_Plan"
+                class="w-full slide-left-img"
+              />
+              <img
+                src="./assets/floor_plans/floor_plan_2.jpg"
+                alt="Floor_Plan"
+                class="w-full slide-left-img"
+              />
+            </div>
+
+            <!-- Right column -->
+            <div
+              class="w-full md:w-[30%] flex flex-col gap-y-[50px] items-center"
+            >
+              <ul
+                class="list-disc columns-2 gap-8 text-white list-inside ul-li-items"
+              >
+                <li class="fade-up">Clock Tower</li>
+                <li class="fade-up">Entry Portal</li>
+                <li class="fade-up">Toddler's Park</li>
+                <li class="fade-up">Yoga Deck</li>
+                <li class="fade-up">Futsal Court</li>
+                <li class="fade-up">Tennis Court</li>
+                <li class="fade-up">Box Cricket</li>
+                <li class="fade-up">Padel Tennis Court</li>
+                <li class="fade-up">Pickleball Court</li>
+                <li class="fade-up">Basketball</li>
+                <li class="fade-up">Amphitheatre</li>
+                <li class="fade-up">Clubhouse</li>
+                <li class="fade-up">Reading Nook</li>
+                <li class="fade-up">Miyawaki Forest</li>
+                <li class="fade-up">Multipurpose Lawn</li>
+              </ul>
+
+              <img
+                src="./assets/floor_plans/plot_range.png"
+                alt="plot_range"
+                class="zoom-in"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="flex items-center justify-center">
+        <div class="max-w-[1300px] py-[50px] px-[20px] md:px-[40px] w-full">
+          <div class="border-b w-full h-[1px]"></div>
+        </div>
+      </div>
+      <section class="w-full" id="gallery">
+        <div
+          class="max-w-[1300px] mx-auto px-[20px] md:px-[40px] overflow-hidden"
+        >
+          <h3 class="text-[32px] text-white pb-[30px]">Gallery</h3>
+
+          <div
+            class="flex gap-[50px] md:flex-row flex-col w-full justify-between"
+          >
+            <img
+              class="block w-full md:w-[30%] gallery-slide-left gallery-img"
+              src="./assets/gallery/Image-1.jpg"
+            />
+            <img
+              class="block w-full md:w-[30%] gallery-slide-up gallery-img"
+              src="./assets/gallery/Image-2.jpg"
+            />
+            <img
+              class="block w-full md:w-[30%] gallery-slide-right gallery-img"
+              src="./assets/gallery/Image-3.jpg"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Overlay for zoom -->
+      <div class="gallery-overlay" id="gallery-overlay">
+        <img src="" alt="Zoomed Image" id="overlay-img" />
+      </div>
+
+      <div class="flex items-center justify-center">
+        <div class="max-w-[1300px] py-[50px] px-[20px] md:px-[40px] w-full">
+          <div class="border-b w-full h-[1px]"></div>
+        </div>
+      </div>
+      <section
+        class="w-full flex items-center justify-center pb-[50px]"
+        id="contact-us"
+      >
+        <div
+          class="w-full max-w-[1300px] px-[20px] md:px-[40px] overflow-hidden"
+        >
+          <h3 class="text-[32px] text-white pb-[30px]">Contact Us</h3>
+          <div>
+            <form action="" id="contactForm">
+              <div
+                class="flex flex-col md:flex-row justify-between w-full gap-5"
+              >
+                <div class="w-full md:w-[45%]">
+                  <input
+                    type="text"
+                    placeholder="Full Name"
+                    id="fullName"
+                    class="text-white form-animate py-3 px-2 bg-transparent w-full focus:outline-none border-b"
+                  />
+                  <p class="error-text-small" id="nameError">placeholder</p>
+                </div>
+
+                <div class="w-full md:w-[45%]">
+                  <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Phone Number"
+                    class="text-white form-animate py-3 px-2 bg-transparent w-full focus:outline-none border-b"
+                  />
+
+                  <!-- Include the intl-tel-input CSS -->
+                  <link
+                    rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css"
+                  />
+
+                  <p class="error-text-small" id="phoneError">placeholder</p>
+                </div>
+              </div>
+
+              <div>
+                <div class="w-full md:w-[45%]">
+                  <input
+                    type="mail"
+                    id="emailAddress"
+                    placeholder="Email Address"
+                    class="text-white form-animate py-3 px-2 bg-transparent w-full focus:outline-none border-b"
+                  />
+                  <p class="error-text-small" id="emailError">placeholder</p>
+                </div>
+
+                <div class="w-full md:w-[45%]">
+                  <textarea
+                    placeholder="Your Questions Or Comments"
+                    rows="1"
+                    id="messageBox"
+                    class="text-white form-animate w-full bg-transparent focus:outline-none border-b px-2 py-4 mt-[10px]"
+                  ></textarea>
+                  <p class="error-text-small" id="messageError">placeholder</p>
+                </div>
+
+                <button
+                  type="submit"
+                  class="mt-[10px] form-animate group py-1 px-3 bg-white text-[#667379] rounded shadow-[0_-1px_0_1px_rgba(0,0,0,0.05)_inset,0_0_0_1px_rgba(0,0,0,0.1)_inset] hover:bg-gray-100 active:shadow-[-1px_0px_1px_0px_rgba(0,0,0,0.15)_inset, 1px_0px_1px_0px_rgba(0,0,0,0.15)_inset, 0px_2px_2px_0px_rgba(0,0,0,0.15)_inset]"
+                >
+                  <span
+                    class="block group-active:[transform:translate3d(0,1px,0)] gradient-text"
+                  >
+                    Submit
+                  </span>
+                </button>
+              </div>
+            </form>
+            <p class="text-[16px] text-white mt-[20px] form-animate">
+              Note: We keep your information strictly confidential and we don’t
+              spam your email.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer
+      class="bg-white w-full pt-[50px] flex items-center justify-center flex-col"
+    >
+      <div
+        class="w-full max-w-[1300px] px-[20px] md:px-[40px] overflow-x-hidden footer-animate"
+      >
+        <div
+          class="flex flex-col md:flex-row md:items-center justify-center gap-y-[30px] md:justify-between w-full"
+        >
+          <div class="w-full flex items-center justify-center md:block">
+            <img src="./assets/Logo.png" alt="Logo" class="h-[40px]" />
+          </div>
+          <div class="flex gap-[20px] items-center justify-center">
+            <a href="#"
+              ><img
+                src="./assets/social_media_icons/facebook.png"
+                alt="Facebook"
+            /></a>
+            <a href="#"
+              ><img src="./assets/social_media_icons/twitter.png" alt="Twitter"
+            /></a>
+            <a href="#"
+              ><img
+                src="./assets/social_media_icons/instagram.png"
+                alt="Instagram"
+            /></a>
+            <a href="#"
+              ><img src="./assets/social_media_icons/youtube.png" alt="Youtube"
+            /></a>
+          </div>
+        </div>
+      </div>
+      <div class="w-full border-b border-[#BE9C77] my-[25px]"></div>
+      <div class="w-full px-[20px] md:px-[40px] max-w-[1300px] pb-[25px]">
+        <p class="text-[14px] text-center md:text-left">
+          © 2025 Baymount by Ananta Realty | All Rights Reserved |
+          <br class="hidden md:block" />
+          Designed & Developed by
+          <a href="https://www.whitethoughts.in" target="_blank">
+            <br class="block md:hidden" />
+            White Thoughts and Branding
+          </a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
