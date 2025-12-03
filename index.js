@@ -1,3 +1,4 @@
+// NAVBAR START
 document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.getElementById("hamburger");
   const overlay = document.getElementById("overlay");
@@ -55,6 +56,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+// NAVBAR END
+
+//ICONIC LIVING & PROJECT HIGHLIGHTS ANIMATIONS START
 document.addEventListener("DOMContentLoaded", () => {
   const observer = new IntersectionObserver(
     (entries) => {
@@ -70,10 +74,13 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   const elements = document.querySelectorAll(
-    ".slide-left, .slide-right, .slide-up, .slide-left-img"
+    ".slide-left, .slide-right, .slide-up"
   );
   elements.forEach((el) => observer.observe(el));
 });
+//ICONIC LIVING & PROJECT HIGHLIGHTS ANIMATIONS END
+
+// FLOOR PLAN START
 document.addEventListener("DOMContentLoaded", () => {
   const leftImages = document.querySelectorAll("#floor-plan .slide-left-img");
   const rightItems = document.querySelectorAll("#floor-plan .fade-up");
@@ -131,6 +138,9 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   imgObserver.observe(rightImage);
 });
+// FLOOR PLAN END
+
+//GALLERY START
 document.addEventListener("DOMContentLoaded", () => {
   const galleryImages = document.querySelectorAll(
     "#gallery .gallery-slide-left, #gallery .gallery-slide-right, #gallery .gallery-slide-up"
@@ -165,8 +175,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-const elements = document.querySelectorAll(".form-animate");
+//GALLERY END
 
+//FORM ANIMATION START
+const elements = document.querySelectorAll(".form-animate");
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -175,6 +187,9 @@ const observer = new IntersectionObserver((entries) => {
   });
 });
 
+//FORM ANIMATION END
+
+// FOOTER ANIMATION START
 elements.forEach((el) => observer.observe(el));
 const footer = document.querySelector(".footer-animate");
 
@@ -185,24 +200,24 @@ const observerFooter = new IntersectionObserver((entries) => {
     }
   });
 });
-
 observerFooter.observe(footer);
-// ------------------- intl-tel-input Setup -------------------
-const phoneInput = document.querySelector("#phone");
+//FOOTER ANIMATION END
 
+//FORM VALIDATIONS
+const phoneInput = document.querySelector("#phone");
 const iti = window.intlTelInput(phoneInput, {
   initialCountry: "in",
   utilsScript:
     "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-  separateDialCode: true, // flag + country code outside input
+  separateDialCode: true,
 });
 
-// ------------------- Regex Patterns -------------------
+//Regex Patterns
 const nameRegex = /^[A-Za-z.\s]*$/;
 const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 const urlRegex = /(https?:\/\/[^\s]+)/gi;
 
-// ------------------- Error Handling -------------------
+//Error Handling
 function showError(id, message) {
   const el = document.getElementById(id);
   el.innerText = message;
@@ -214,7 +229,7 @@ function hideError(id) {
   el.classList.remove("error-visible");
 }
 
-// ------------------- Form Submission -------------------
+//Form Submission
 document.getElementById("contactForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -226,7 +241,7 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
   const phoneValue = phoneInput.value.trim();
   const phoneValid = iti.isValidNumber();
 
-  // ------------------- VALIDATIONS -------------------
+  //VALIDATIONS
   if (!name || !nameRegex.test(name)) {
     showError("nameError", "Please enter a valid name.");
     hasError = true;
@@ -247,23 +262,16 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
     hasError = true;
   } else hideError("messageError");
 
-  if (hasError) {
-    console.log("Validation failed. Correct the errors and try again.");
-    return;
-  }
-
-  // ------------------- CREATE DATA OBJECT -------------------
+  //CREATE DATA OBJECT
   const formData = {
     name: name,
     email: email,
-    phone: iti.getNumber(), // full number with country code
+    phone: iti.getNumber(),
     message: message,
-    countryData: iti.getSelectedCountryData(), // flag, dial code, country info
+    countryData: iti.getSelectedCountryData(),
   };
 
-  console.log("Form Data Object:", formData);
-
-  // ------------------- SEND DATA TO URL -------------------
+  //SEND DATA TO URL
   fetch("https://your-url-here.com/api/submit", {
     method: "POST",
     headers: {
@@ -275,6 +283,18 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
     .then((data) => {
       console.log("Server Response:", data);
       alert("Form submitted successfully!");
+
+      // Clear all fields after successful submission
+      document.getElementById("fullName").value = "";
+      document.getElementById("emailAddress").value = "";
+      document.getElementById("phone").value = "";
+      document.getElementById("messageBox").value = "";
+
+      // Optional: hide any error messages if visible
+      hideError("nameError");
+      hideError("emailError");
+      hideError("phoneError");
+      hideError("messageError");
     })
     .catch((err) => {
       console.error("Error submitting form:", err);

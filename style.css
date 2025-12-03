@@ -13,7 +13,7 @@ body {
   );
 }
 
-/* NAVBAR */
+/* NAVBAR START*/
 .navbar {
   height: 70px;
   width: 100%;
@@ -25,9 +25,6 @@ body {
   top: 0;
   left: 0;
   z-index: 2000;
-
-  /* animation: slideDown /* transform: translateY(-100%);
-  opacity: 0; 0.6s ease-out forwards; */
 }
 
 .container {
@@ -39,12 +36,6 @@ body {
   align-items: center;
   padding-left: 20px;
   padding-right: 20px;
-}
-@media (min-width: 768px) {
-  .container {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
 }
 
 .logo {
@@ -73,14 +64,12 @@ body {
   transition: 0.4s ease;
 }
 
-.line1 {
+.line1,
+.line3 {
   width: 16px;
 }
 .line2 {
   width: 24px;
-}
-.line3 {
-  width: 16px;
 }
 .hamburger.active .line1 {
   transform: rotate(45deg) translateY(13px);
@@ -125,6 +114,15 @@ body {
   text-decoration: none;
   font-weight: 400;
 }
+@media (min-width: 768px) {
+  .container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+/* NAVBAR END*/
+
+/* BANNER START */
 .banner {
   height: calc(100vh - 70px);
 }
@@ -139,14 +137,19 @@ body {
   animation: slideUp 1s ease-out forwards;
   animation-delay: 0.8s;
 }
-.gradient-text {
-  background: linear-gradient(90deg, #7b5b54 0%, #667379 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-/* Initial states */
+/* BANNER END */
+
+/* ICONIC LIVING ANIMATIONS START*/
 .slide-left {
   opacity: 0;
   transform: translateX(-50px);
@@ -159,75 +162,54 @@ body {
   transition: all 0.8s ease-out;
 }
 
-/* When element comes into view */
 .slide-left.show,
 .slide-right.show {
   opacity: 1;
   transform: translateX(0);
 }
+/* ICONIC LIVING ANIMATIONS END*/
+
+/* PROJECT HIGHLIGHTS ANIMATIONS START*/
 .slide-up {
   opacity: 0;
   transform: translateY(50px);
   transition: all 0.8s ease-out;
 }
-
-/* When in view: slide up */
 .slide-up.show {
   opacity: 1;
   transform: translateY(0);
 }
-@media (min-width: 768px) and (max-width: 1023px) {
-  .ul-li-items {
-    columns: 1 !important;
-  }
-}
-@keyframes slideDown {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-}
-@keyframes slideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* Slide from left */
+/* PROJECT HIGHLIGHTS ANIMATIONS END*/
+
+/* FLOOR PLANS CSS AND ANIMATIONS START */
 .slide-left-img {
   opacity: 0;
   transform: translateX(-50px);
   transition: all 0.8s ease-out;
 }
 
-/* Zoom in */
 .zoom-in {
   opacity: 0;
   transform: scale(0.8);
   transition: all 0.8s ease-out;
 }
-
-/* Fade in and slide up for li items */
 .fade-up {
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.6s ease-out;
 }
-
-/* When element comes into view */
 .show {
   opacity: 1;
   transform: translateX(0) translateY(0) scale(1);
 }
-/* Scroll animations */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .ul-li-items {
+    columns: 1 !important;
+  }
+}
+/* FLOOR PLANS CSS AND ANIMATIONS END */
+
+/*GALLERY ANIMATION AND CSS START*/
 .gallery-slide-left,
 .gallery-slide-right,
 .gallery-slide-up {
@@ -252,7 +234,6 @@ body {
   transform: translateX(0) translateY(0) scale(1);
 }
 
-/* Gallery lightbox overlay */
 .gallery-overlay {
   position: fixed;
   top: 0;
@@ -264,7 +245,6 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  cursor: zoom-out;
 }
 
 .gallery-overlay img {
@@ -272,15 +252,39 @@ body {
   max-height: 90%;
   transition: transform 0.3s ease;
 }
+/*GALLERY ANIMATION AND CSS END*/
+
+/*FORM ANIMATION AND CSS START*/
 .form-animate {
   opacity: 0;
-  transition: opacity 1s ease; /* changed from all */
+  transition: opacity 1s ease;
 }
 
 .form-animate.visible {
   opacity: 1;
 }
+.iti {
+  width: 100% !important;
+}
 
+.error-text-small {
+  height: 16px;
+  font-size: 10px;
+  margin-top: 2px;
+  background: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  visibility: hidden;
+}
+.error-visible {
+  visibility: visible;
+}
+.iti__selected-dial-code {
+  color: white !important;
+}
+/*FORM ANIMATION AND CSS END*/
+
+/* FOOTER ANIMATION START */
 .footer-animate {
   opacity: 0;
   transform: translateY(20px);
@@ -291,22 +295,13 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
-.iti {
-  width: 100% !important;
-}
+/* FOOTER ANIMATION END */
 
-.error-text-small {
-  height: 16px;
-  font-size: 10px;
-  margin-top: 2px;
-  background: -webkit-linear-gradient(#d11b23, #820a10);
+/* BUTTON TEXT COLOR */
+.gradient-text {
+  background: linear-gradient(90deg, #7b5b54 0%, #667379 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  visibility: hidden;
-}
-.error-visible {
-  visibility: visible;
-}
-.iti__selected-dial-code {
-  color: white !important;
+  background-clip: text;
+  color: transparent;
 }
