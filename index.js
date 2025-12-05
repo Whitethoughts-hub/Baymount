@@ -1,4 +1,19 @@
 // NAVBAR START
+const navbar = document.querySelector(".navbar");
+const logo = document.querySelector(".logo");
+
+window.addEventListener("scroll", () => {
+  const triggerPoint = window.innerHeight * 0.3; // 50vh
+
+  if (window.scrollY > triggerPoint) {
+    navbar.classList.add("navbar-scrolled");
+    logo.src = "./assets/Dark_Logo.svg";
+  } else {
+    navbar.classList.remove("navbar-scrolled");
+    logo.src = "./assets/White_Logo.svg";
+  }
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.getElementById("hamburger");
   const overlay = document.getElementById("overlay");
